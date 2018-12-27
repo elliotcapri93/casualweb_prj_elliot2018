@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        
+        <title>Demo Sign Up</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <script>
+            function submit() {
+                var formData = new FormData();
+                var keys = ['user','name'];
+                formData.append(keys[0], document.getElementById(keys[0]).value);
+                formData.append("accountnum", 123456); // number 123456 is immediately converted to a string "123456"
+
+                var request = new XMLHttpRequest();
+                request.open("POST", "signup.php");
+                request.send(formData);
+                console.log("clicked");
+            }
+            function signup() {
+                console.log("signup() pressed.");
+            }
+            function clickednav(name){
+                document.getElementById(name).style.backgroundColor = "#FF0000";
+            }
+        </script>
+
+        <ul>
+            <li><a id="login" class="nav" href="login.html">Log In</a></li>
+            <li><a id="signup" class="nav active" href="signup.html">Sign Up</a></li>
+            <li><a id="forgot" class="nav" href="javascript:clickednav('forgot')">Forgot Password</a></li>
+            <li><a id="contact" class="nav" href="javascript:clickednav('contact')">Contact</a></li>
+        </ul>
+        <div align="center" style="height:100%">
+            <h1>Welcome, please sign up to enjoy.</h1>
+            <input type="text" id="user" placeholder="Username / Email">
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="password" id="pass" placeholder="Password">
+            <button class="button login" type="submit" onclick="submit()">Sign Up</button>
+            <a class="norm_a" href="javascript:signup();">Sign up locally</a>
+        </div>
+
+    </body>
+
+</html>

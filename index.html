@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log In Demo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+
+<body>
+    <script>
+        function submit() {
+            document.getElementById("user").value;
+        }
+            function clickednav(name){
+                document.getElementById(name).style.backgroundColor = "#FF0000";
+            }
+    </script>
+    <nav>
+        <ul>
+            <li><a id="login" class="nav active" href="login.html">Log In</a></li>
+            <li><a id="signup" class="nav" href="signup.html">Sign Up</a></li>
+            <li><a id="forgot" class="nav" href="javascript:clickednav('forgot')">Forgot Password</a></li>
+            <li><a id="contact" class="nav" href="javascript:clickednav('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div align="center" style="height:100%">
+        <h1>Welcome, please log in to continue.</h1>
+        <input type="text" id="user" placeholder="Username / Email">
+        <input type="password" id="pass" placeholder="Password">
+        <button class="button login" onclick="submit()">Log In</button>
+        <a class="norm_a" href="signup.html">Sign up</a>
+        <a class="norm_a" href="#forgot.html">Forgot password</a>
+    </div>
+
+</body>
+
+</html>
